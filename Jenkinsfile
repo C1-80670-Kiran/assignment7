@@ -24,12 +24,12 @@ pipeline {
         }
         stage ('docker remove service') {
             steps {
-               sh '/usr/bin/docker service rm myservice'
+               sh '/usr/bin/docker service rm myservice1'
             }
         }
         stage ('docker create service') {
             steps {
-               sh '/usr/bin/docker service create --name myservice -p 9090:80 --replicas 5 kirandada0303723/myhttpd'
+               sh '/usr/bin/docker service create --name myservice1 -p 9090:80 --replicas 5 kirandada0303723/myhttpd'
             }
         }
     }
